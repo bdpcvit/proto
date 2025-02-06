@@ -1,4 +1,4 @@
-module github.com/bdpcvit/protos
+module github.com/bdpcvit/proto
 
 go 1.23.6
 
