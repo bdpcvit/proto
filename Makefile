@@ -9,4 +9,4 @@ gen: ./proto/sso/*.proto
 clean: 
 	del /S /F .\gen\go\*.go
 
-Default: all
+.DEFAULT_GOAL := gen
