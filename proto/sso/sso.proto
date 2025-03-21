@@ -1,16 +1,19 @@
 syntax = "proto3";
 
+//Contract file
+
 package auth;
 
 option go_package = "bdpcvit.sso.v1;ssov1";
 
 
+
 service Auth {
     rpc Register(RegisterRequest) returns (RegisterResponse);
+    rpc MailConfirm(ConfirmRequest) returns (ConfirmResponse);
     rpc Login(LoginRequest) returns (LoginResponse);
     rpc IsAdmin(IsAdminRequest) returns (IsAdminResponse);
 }
-
 
 message RegisterRequest {
     string email = 1;
@@ -18,6 +21,14 @@ message RegisterRequest {
 }
 
 message RegisterResponse {
+    int32  email_status = 1;
+}
+
+message ConfirmRequest {
+    string confirm_code = 1;
+}
+
+message ConfirmResponse {
     int64 user_id = 1;
 }
 
